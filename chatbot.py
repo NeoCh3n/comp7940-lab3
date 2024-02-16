@@ -50,6 +50,7 @@ def main():
     # on different commands - answer in Telegram
     dispatcher.add_handler (CommandHandler("add", add))
     dispatcher.add_handler (CommandHandler("help", help_command))
+    dispatcher.add_handler (CommandHandler("hello", hello))
 
     # Start the bot
     updater.start_polling()
@@ -80,15 +81,10 @@ def add(update: Update, context: CallbackContext) -> None:
     except (IndexError, ValueError):
         update.message.reply_text('Usage: /add <keyword>')
 
+#Send a message when the command /hello is issued. When user type /hello Kevin , it will reply Good day, Kevin!
+def hello(update: Update, context: CallbackContext) -> None:
+    update.message.reply_text('Good day, ' + context.args[0] + '!')
+
 
 if __name__ == '__main__':
     main()
-
-
-
-# register a dispatcher to hanbdle message: here we register an echo dispatcher
-# echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
-# dispatcher.add_handler(echo_handler)
-
-#dispatcher for chatgpt
-
