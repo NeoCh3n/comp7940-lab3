@@ -1,13 +1,13 @@
 
-from flask import Flask, request, jsonify
+
 import requests
-import os
-from flask import Flask, request, jsonify
+
+
 import configparser
 import requests
-import os
 
-app = Flask(__name__)
+
+
 
 class HKBU_ChatGPT:
     def __init__(self, config_path='./config.ini'):
