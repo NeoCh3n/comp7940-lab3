@@ -1,13 +1,6 @@
-
-
 import requests
-
-
 import configparser
 import requests
-
-
-
 
 class HKBU_ChatGPT:
     def __init__(self, config_path='./config.ini'):
@@ -34,7 +27,6 @@ class HKBU_ChatGPT:
 
 chatgpt = HKBU_ChatGPT()
 
-@app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json.get('message')
     if user_input:
